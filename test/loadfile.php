@@ -17,7 +17,7 @@
  * @lincense  http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
  */
 
-include "../src/PamMountConf.php";
+require_once dirname(__DIR__)."/vendor/autoload.php";
 
 $conf = new \PamMount\Config('/tmp/pam_mount.conf.xml');
 

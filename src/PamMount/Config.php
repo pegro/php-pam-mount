@@ -1,5 +1,4 @@
 <?php
-
 /**
  * pam_mount config file parser/generator.
  *
@@ -45,12 +44,6 @@ class Config
 
         $content = file_get_contents($filename);
 
-        /*
-        preg_match('/(.*)<!-- ?BEGIN ?-->(.*)<!-- ?END ?-->(.*)/sum', $content, $matches);
-
-        $this->header = $matches[1];
-        $this->footer = $matches[3];
-*/
         return $this->loadString($content);
     }
 
@@ -118,11 +111,11 @@ class Config
 
     public function toString()
     {
-        if($this->xml instanceof SimpleXMLElement) {
-            $domxml = new DOMDocument('1.0');
+        if($this->xml instanceof \SimpleXMLElement) {
+            $domxml = new \DOMDocument('1.0');
             $domxml->preserveWhiteSpace = false;
             $domxml->formatOutput = true;
-            /* @var $xml SimpleXMLElement */
+            /* @var $xml \SimpleXMLElement */
             $domxml->loadXML($this->xml->asXML());
             return $domxml->saveXML();
         }
@@ -169,7 +162,7 @@ class Config
         return $volume_element;
     }
 
-    private static function parseVolume(SimpleXMLElement $volume)
+    private static function parseVolume(\SimpleXMLElement $volume)
     {
         $volume_parsed = [
             'path' => (string)$volume['path'][0],
