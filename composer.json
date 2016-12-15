@@ -1,0 +1,17 @@
+{
+  "name": "pegro/php-pam-mount",
+  "license": "Apache-2",
+  "version": "0.1",
+  "authors": [
+    {
+      "name": "Peter Große",
+      "email": "pegro@friiks.de"
+    }
+  ],
+  "autoload": {
+    "psr-0": {"PamMount": "src/"}
+  },
+  "require": {
+    "php": ">=5.3.2"
+  }
+}
